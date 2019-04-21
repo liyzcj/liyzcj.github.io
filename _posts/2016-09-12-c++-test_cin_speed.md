@@ -206,29 +206,6 @@ void ifstream_read(){
 }
 ```
 
-### fread 与 read
-
-接下来是先将整个文件当作 RAW 字符串读进内存, 再手动对字符串进行解析, 将数据转换为整数存进数组:
-
-```c++
-//先fread读取字符串再parse
-void fread_parse(){
-  freopen("data.txt", "rb", stdin);
-  int len = fread(buf, 1, MAXS, stdin);
-  buf[len] = '\0';
-  parse(buf);
-}
-//先read读取字符串再parse
-void read_parse(){
-  int fd = open("data.txt", O_RDONLY);
-  int len = read(fd, buf, MAXS);
-  buf[len] = '\0';
-  parse(buf);
-}
-```
-
-`read` 是比 `fread` 更底层的函数, `使用read` 也许比 `fread` 更加快.
-
 ### mmap
 
 mmap 是linux 的函数, 直接将文件映射进内存:
@@ -276,22 +253,6 @@ void pascal(){
 ### 其他函数
 
 其他函数包括, 字符串的解析函数, 将字符串解析为整数存进数组.
-
-```c++
-//parse 函数
-void parse(char *buf){
-  i=0;
-  data[i] = 0;
-  for (char *p=buf; *p != '\0'; p++)
-  {
-    if (*p == '\n' && *(p+1) != '\0')
-      data[++i] = 0;
-    else
-      data[i] = data[i] * 10 + *p - '0';
-  }
-  i++;
-}
-```
 
 评估函数, 对各个读取方法的函数的评估, 并在评估过程中打印结果. 为保证公平, 对每种方法分别评估 ITER 次, 最后再将结果取平均并返回.
 
