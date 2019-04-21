@@ -206,7 +206,7 @@ void ifstream_read(){
 }
 ```
 
-### fread
+### fread 与 read
 
 接下来是先将整个文件当作 RAW 字符串读进内存, 再手动对字符串进行解析, 将数据转换为整数存进数组:
 
@@ -218,13 +218,6 @@ void fread_parse(){
   buf[len] = '\0';
   parse(buf);
 }
-```
-
-### read
-
-`read` 是比 `fread` 更底层的函数, `使用read` 也许比 `fread` 更加快:
-
-```c++
 //先read读取字符串再parse
 void read_parse(){
   int fd = open("data.txt", O_RDONLY);
@@ -233,6 +226,8 @@ void read_parse(){
   parse(buf);
 }
 ```
+
+`read` 是比 `fread` 更底层的函数, `使用read` 也许比 `fread` 更加快.
 
 ### mmap
 
