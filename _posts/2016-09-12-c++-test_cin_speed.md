@@ -7,7 +7,7 @@ tags: [C, C++, iostream, speed]
 ---
 
 <p align="center">
-<img src="https://s2.ax1x.com/2019/04/21/EFseE9.jpg" style="width:650px;" />
+<img src="https://s2.ax1x.com/2019/04/21/EFseE9.jpg" style="width:480px;hight:270px;" />
 </p>
 
 ## 摘要
