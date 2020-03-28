@@ -1,9 +1,20 @@
+---
+layout: post
+title: "Python Descriptor"
+date: 2020-03-28
+categories: python
+tags: [python, advance]
+---
+
+
 # Python Descriptor
 
 > * 什么是 Python Descriptor？
 > * Python 内部是怎么使用它的？
 > * 如何实现自己的 descriptors？
 > * 什么时候使用 Python Descriptor？
+
+<!-- more -->
 
 ## 什么是 Python Descriptors
 
